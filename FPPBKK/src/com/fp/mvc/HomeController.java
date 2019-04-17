@@ -48,7 +48,7 @@ public class HomeController {
         return new ModelAndView("form", "barang", new Barang());
     }
 
-	@RequestMapping("/addBarang")
+	@RequestMapping("/listBarang")
 	public String showForm(HttpServletRequest request, Model model) {
 
 		String harga = request.getParameter("harga");
