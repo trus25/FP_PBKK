@@ -43,15 +43,16 @@
               <p class="mb-1">Alat Elektronik</p>
               </a></div>
         &nbsp;</div>
-        <div class="col-md-6 col-xl-7">
-          <div class="card col-md-3"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
+        <div class="col-md-2 ">
+          <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Buku </h5>
               <p class="card-text">Rp 15.000</p>
               </div>
           </div>
-          
-          <div class="card col-md-3"> <img class="card-img-top" src="images/card-img.png" alt="Card image cap">
+          </div>
+          <div class="col-md-2">
+          <div class="card"> <img class="card-img-top" src="images/card-img.png" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${name} </h5>
               <p class="card-text">Rp ${harga}</p>
@@ -59,7 +60,8 @@
           </div>
        </div>
       </div>
-    </div>
+      </div>
+    
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="js/jquery-3.3.1.min.js"></script>
 
