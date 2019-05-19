@@ -1,41 +1,78 @@
 package com.fp.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="barang")
 public class Barang {
-	private String name;
-	private long id;
-	private String harga;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
 	
+	@Column(name="nama_barang")
+	private String namaBarang;
 	
-	public Barang() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	@Column(name="jenis_barang")
+	private String jenisBarang;
 	
+	@Column(name="harga_pinjaman")
+	private int hargaPinjaman;
 	
-	public Barang(String name, long id, String harga) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.harga = harga;
+	@Column(name="user_id")
+	private int idUser;
+	
+	public Barang(String namaBarang) {
+		this.namaBarang = namaBarang;
 	}
 
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getHarga() {
-		return harga;
-	}
-	public void setHarga(String harga) {
-		this.harga = harga;
-	}
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
+
+	public void setNamaBarang(String namaBarang) {
+		this.namaBarang = namaBarang;
+	}
+
+	public String getJenisBarang() {
+		return jenisBarang;
+	}
+
+	public void setJenisBarang(String jenisBarang) {
+		this.jenisBarang = jenisBarang;
+	}
+
+	public int getHargaPinjaman() {
+		return hargaPinjaman;
+	}
+
+	public void setHargaPinjaman(int hargaPinjaman) {
+		this.hargaPinjaman = hargaPinjaman;
+	}
+
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+
+	@Override
+	public String toString() {
+		return "Barang [id=" + id + ", namaBarang=" + namaBarang + ", jenisBarang=" + jenisBarang + ", hargaPinjaman="
+				+ hargaPinjaman + ", idUser=" + idUser + "]";
+	}
+	
+	
+	
 }
