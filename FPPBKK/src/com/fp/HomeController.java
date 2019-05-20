@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fp.entity.Pengguna;
-import com.fp.entity.Barang;
+import com.fp.entity.Products;
+import com.fp.service.ProductService;
 import com.fp.entity.Peminjaman;
 import com.fp.service.PenggunaService;
-import com.fp.service.BarangService;
 import com.fp.service.PeminjamanService;
 
 @Controller
 public class HomeController {
 
     @Autowired
-	private BarangService barangService;
+    private ProductService productService;
 	
 	//@Autowired
 	//private SellerService sellerService;
@@ -43,9 +43,9 @@ public class HomeController {
 	
 	@GetMapping(value="/debug1")
 	public String product(Model theModel) {
-		List<Barang> theBarang = barangService.getBarangs();
+		List<Products> theProducts = productService.getProducts();
 		
-		theModel.addAttribute("barang", theBarang);
+		theModel.addAttribute("products", theProducts);
 		return "debug1";
 	}
 	

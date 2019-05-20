@@ -8,55 +8,54 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.fp.entity.Barang;
+import com.fp.entity.Products;
 
 @Repository
-public class BarangDAOImpl implements BarangDAO {
+public class ProductsDAOImpl implements ProductsDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<Barang> getBarangs() {
+	public List<Products> getProducts() {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		// create a query
-		Query<Barang> theQuery = currentSession.createQuery("from Barang order by id", Barang.class);
+		Query<Products> theQuery = currentSession.createQuery("from Products order by id", Products.class);
 
 		// execute query and get result list
-		List<Barang> barang = theQuery.getResultList();
+		List<Products> products = theQuery.getResultList();
 
 		// return the results
-		return barang;
+		return products;
 
 	}
 
 	@Override
-	public Barang getBarang(int theId) {
+	public Products getProduct(int theId) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Barang theBarang = currentSession.get(Barang.class, theId);
+		Products theProduct = currentSession.get(Products.class, theId);
 		
-		return theBarang;
+		return theProduct;
 	}
 
 	@Override
-	public void saveBarang(Barang theBarang) {
+	public void saveProduct(Products theProduct) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.saveOrUpdate(theBarang);
+		currentSession.saveOrUpdate(theProduct);
 		
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
-	public void deleteBarang(int theId) {
+	public void deleteProduct(int theId) {
 		// TODO Auto-generated method stub
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query theQuery = currentSession.createQuery("delete from Barang where id=:Idbarang");
+		Query theQuery = currentSession.createQuery("delete from Products where id=:productId");
 		
-		theQuery.setParameter("Idbarang", theId);
+		theQuery.setParameter("productId", theId);
 		
 		theQuery.executeUpdate();
 		
