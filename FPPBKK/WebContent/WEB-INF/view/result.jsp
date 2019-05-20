@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,6 +52,7 @@
               </div>
           </div>
           </div>
+          <c:forEach var="tempBarang" items="${barang}">
           <div class="col-md-2">
           <div class="card"> <img class="card-img-top" src="images/card-img.png" alt="Card image cap">
             <div class="card-body">
@@ -59,6 +61,7 @@
               </div>
           </div>
        </div>
+       </c:forEach>
       </div>
       </div>
     

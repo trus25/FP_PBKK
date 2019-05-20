@@ -15,13 +15,13 @@ public class Pengguna {
 	@Column(name="id")
 	private int penggunaId;
 	
-	@Column(name="username")
+	@Column(name="pengguna_nama")
 	private String penggunaUsername;
 	
 	@Column(name="email")
 	private String penggunaEmail;
 	
-	@Column(name="password")
+	@Column(name="pengguna_password")
 	private String penggunaPassword;
 
 	public int getPenggunaId() {
