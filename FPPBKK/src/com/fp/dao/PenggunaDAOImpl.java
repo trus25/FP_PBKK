@@ -19,7 +19,7 @@ public class PenggunaDAOImpl implements PenggunaDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		String user = thePengguna.getPenggunaUsername();
 		String pass = thePengguna.getPenggunaPassword();
-		Query<Pengguna> theQuery = currentSession.createQuery("from Pengguna where username=:username and password=:password",Pengguna.class);
+		Query<Pengguna> theQuery = currentSession.createQuery("from Pengguna where pengguna_nama=:username and pengguna_password=:password",Pengguna.class);
 		theQuery.setParameter("username", user);
 		theQuery.setParameter("password", pass);
 		Pengguna tempPengguna = theQuery.getSingleResult();
