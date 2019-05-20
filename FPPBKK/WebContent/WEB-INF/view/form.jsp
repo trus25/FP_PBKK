@@ -23,7 +23,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent1">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+            <li class="nav-item active"> <a class="nav-link" href="listBarang">Home <span class="sr-only">(current)</span></a> </li>
             <li class="nav-item"> <a class="nav-link" href="#">Input Barang</a></li>
             <li class="nav-item dropdown">
   <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
@@ -41,23 +41,31 @@
         <h3>Form Input Barang</h3>
         
         <form:form method="POST"
-          action="listBarang" modelAttribute="products" class="form-horizontal" >
-             
-                <div class="form-group">
-                    <form:label path="name" class="control-label col-sm-2" >Name</form:label>
-                     <div class="col-sm-10">
-                   <form:input path="name" class="form-control"/></div>
-               </div>
-               <div class="form-group">
-                    <form:label path="id" class="control-label col-sm-2">Id</form:label>
-                     <div class="col-sm-10">
-                    <form:input path="id" class="form-control"/></div>
+          action="savebarang" modelAttribute="products" class="form-horizontal" >
+             <form:hidden path="id"/>
+            <div class="form-group">
+                    <form:label path="barangUserid" class="control-label col-sm-2">
+                      User id</form:label>
+                       <div class="col-sm-10">
+                    <form:input path="barangUserid" class="form-control"/></div>
                 </div>
                 <div class="form-group">
-                    <form:label path="harga" class="control-label col-sm-2">
+                    <form:label path="barangCategory" class="control-label col-sm-2">
+                      barang Category</form:label>
+                       <div class="col-sm-10">
+                    <form:input path="barangCategory" class="form-control"/></div>
+                </div>
+                <div class="form-group">
+                    <form:label path="barangName" class="control-label col-sm-2" >Name</form:label>
+                     <div class="col-sm-10">
+                   <form:input path="barangName" class="form-control"/></div>
+               </div>
+              
+                <div class="form-group">
+                    <form:label path="barangPrice" class="control-label col-sm-2">
                       Harga</form:label>
                        <div class="col-sm-10">
-                    <form:input path="harga" class="form-control"/></div>
+                    <form:input path="barangPrice" class="form-control"/></div>
                 </div>
                 <div class="form-group">
 						<input type="submit" value="Submit" class="btn float-right btn btn-primary">

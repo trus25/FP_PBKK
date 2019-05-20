@@ -66,18 +66,38 @@ public class HomeController {
 	}
 	
 	@PostMapping("/login")
-	public String login(@ModelAttribute("pengguna") Pengguna thePengguna, HttpSession webSession) {
+	public String login(@ModelAttribute("pengguna") Pengguna thePengguna, HttpSession webSession,Model theModel) {
 		
 		String result = penggunaService.checkPengguna(thePengguna);
 		if (result.equals("accepted")) {
 			webSession.setAttribute("username",thePengguna.getPenggunaUsername());
-			return "debug1";
+			List<Products> theProducts = productService.getProducts();
+			
+			theModel.addAttribute("products", theProducts);
+			return "listBarang";
 		}
 		else {
 			return "index";
 		}
 	}
-	
+	@GetMapping("/formbarang")
+	public String formbarang(Model theModel) {
+		Products theProduct = new Products();
+		
+		theModel.addAttribute("products", theProduct);
+		
+		return "form";
+	}
+	@PostMapping("/savebarang")
+	public String saveProduct(@ModelAttribute("products") Products theProduct,Model theModel) {
+		
+		productService.saveProduct(theProduct);
+List<Products> theProducts = productService.getProducts();
+		
+		theModel.addAttribute("products", theProducts);
+		
+		return "listBarang";
+	}
 	//@RequestMapping(value="/shop")
 	//public String shop(Model theModel) {
 	//	List<Seller> theSellers = sellerService.getSellers();
