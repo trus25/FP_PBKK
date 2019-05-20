@@ -41,7 +41,7 @@
         <h3>Form Input Barang</h3>
         
         <form:form method="POST"
-          action="listBarang" modelAttribute="barang" class="form-horizontal" >
+          action="listBarang" modelAttribute="products" class="form-horizontal" >
              
                 <div class="form-group">
                     <form:label path="name" class="control-label col-sm-2" >Name</form:label>

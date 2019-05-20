@@ -39,32 +39,32 @@ public class Products {
 		return barangName;
 	}
 
-	public void setBarangName(String productName) {
-		this.barangName = productName;
+	public void setBarangName(String barangName) {
+		this.barangName = barangName;
 	}
 
 	public String getBarangCategory() {
 		return barangCategory;
 	}
 
-	public void setBarangCategory(String productPrice) {
-		this.barangCategory = productPrice;
+	public void setBarangCategory(String barangCategory) {
+		this.barangCategory = barangCategory;
 	}
 
 	public int getBarangPrice() {
 		return barangPrice;
 	}
 
-	public void setBarangPrice(int productCondition) {
-		this.barangPrice = productCondition;
+	public void setBarangPrice(int barangPrice) {
+		this.barangPrice = barangPrice;
 	}
 
 	public int getBarangUserid() {
 		return barangUserid;
 	}
 
-	public void setBarangUserid(int productGuarantee) {
-		this.barangUserid = productGuarantee;
+	public void setBarangUserid(int barangUserid) {
+		this.barangUserid = barangUserid;
 	}
 
 	@Override

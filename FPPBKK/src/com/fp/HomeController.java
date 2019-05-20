@@ -41,12 +41,28 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/inputBarang")
+	public String inputBarang(Model theModel) {
+		Products theProducts = new Products();
+		
+		theModel.addAttribute("product", theProducts);
+		return "form";
+	}
+	
 	@GetMapping(value="/debug1")
 	public String product(Model theModel) {
 		List<Products> theProducts = productService.getProducts();
 		
 		theModel.addAttribute("products", theProducts);
-		return "debug1";
+		return "listBarang";
+	}
+	
+	@GetMapping(value="/listBarang")
+	public String product1(Model theModel) {
+		List<Products> theProducts = productService.getProducts();
+		
+		theModel.addAttribute("products", theProducts);
+		return "listBarang";
 	}
 	
 	@PostMapping("/login")

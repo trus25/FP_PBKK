@@ -44,24 +44,20 @@
               <p class="mb-1">Alat Elektronik</p>
               </a></div>
         &nbsp;</div>
-        <div class="col-md-2 ">
+        <div class="offset-xl-1 col-xl-3 col-md-6">
+        <div class="row">
+          <c:forEach var="tempBarang" items="${products}">
+          <div class="col-md-6">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Buku </h5>
-              <p class="card-text">Rp 15.000</p>
-              </div>
-          </div>
-          </div>
-          <c:forEach var="tempBarang" items="${barang}">
-          <div class="col-md-2">
-          <div class="card"> <img class="card-img-top" src="images/card-img.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">${tempBarang.namaBarang} </h5>
-              <p class="card-text">Rp ${tempBarang.hargaPinjaman}</p>
+              <h5 class="card-title">${tempBarang.barangName} </h5>
+              <p class="card-text">Rp ${tempBarang.barangPrice}</p>
               </div>
           </div>
        </div>
        </c:forEach>
+       </div>
+       </div>
       </div>
       </div>
     
