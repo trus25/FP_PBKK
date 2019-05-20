@@ -41,12 +41,12 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping(value="/listBarang")
+	@GetMapping(value="/debug1")
 	public String product(Model theModel) {
 		List<Barang> theBarang = barangService.getBarangs();
 		
 		theModel.addAttribute("barang", theBarang);
-		return "result";
+		return "debug1";
 	}
 	
 	@PostMapping("/login")
@@ -55,7 +55,7 @@ public class HomeController {
 		String result = penggunaService.checkPengguna(thePengguna);
 		if (result.equals("accepted")) {
 			webSession.setAttribute("username",thePengguna.getPenggunaUsername());
-			return "listBarang";
+			return "debug1";
 		}
 		else {
 			return "index";

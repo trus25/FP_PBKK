@@ -49,6 +49,7 @@ public class BarangDAOImpl implements BarangDAO {
 		
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void deleteBarang(int theId) {
 		// TODO Auto-generated method stub
