@@ -32,6 +32,6 @@ public class DemoAppConfig extends WebMvcConfigurerAdapter {
 	    registry.addResourceHandler("/**").addResourceLocations("/resources/");
 	   
 	}
-
+	
 
 }

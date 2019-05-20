@@ -2,6 +2,8 @@
     <wb-module deploy-name="FPPBKK">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
         <property name="context-root" value="FPPBKK"/>
         <property name="java-output-path" value="/FPPBKK/build/classes"/>
     </wb-module>

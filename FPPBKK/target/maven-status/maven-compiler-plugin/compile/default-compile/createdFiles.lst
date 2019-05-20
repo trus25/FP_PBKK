@@ -1,5 +1,5 @@
-com\fp\config\DemoAppConfig.class
-com\fp\mvc\HomeController$Barang.class
 com\fp\mvc\HomeController.class
 com\fp\entity\Barang.class
+com\fp\config\DemoAppConfig.class
+com\fp\mvc\HomeController$Barang.class
 com\fp\config\MyDispatcherServletInitializer.class

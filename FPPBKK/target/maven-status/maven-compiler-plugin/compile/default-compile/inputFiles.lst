@@ -1,4 +1,13 @@
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\config\MainApp.java
 D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\config\MyDispatcherServletInitializer.java
-D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\entity\Barang.java
-D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\config\DemoAppConfig.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\entity\Pengguna.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\PeminjamanDAO.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\BarangDAOImpl.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\PeminjamanDAOImpl.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\PenggunaDAOImpl.java
 D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\mvc\HomeController.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\PenggunaDAO.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\entity\Barang.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\entity\Peminjaman.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\dao\BarangDAO.java
+D:\Gitkraken\FP_PBKK\FPPBKK\src\com\fp\config\DemoAppConfig.java
