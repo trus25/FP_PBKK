@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="com.fp")
+@ComponentScan(basePackages="com.fp.mvc")
 public class DemoAppConfig extends WebMvcConfigurerAdapter {
 	
 	// Use @Bean to automatically create this object

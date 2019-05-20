@@ -54,8 +54,8 @@
           <div class="col-md-2">
           <div class="card"> <img class="card-img-top" src="images/card-img.png" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${name} </h5>
-              <p class="card-text">Rp ${harga}</p>
+              <h5 class="card-title">${tempBarang.namaBarang} </h5>
+              <p class="card-text">Rp ${tempBarang.hargaPinjaman}</p>
               </div>
           </div>
        </div>

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,25 +44,25 @@
 				
 			</div>
 			<div class="card-body">
-				<form action="listBarang" method="POST">
+				<form:form action="login" modelAttribute="pengguna" method="POST">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<form:input path="username"/>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<form:input path="password"/>
 					</div>
 					
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right btn btn-primary">
+						<input type="submit" value="Login" class="btn float-right btn btn-primary"/>
 					</div>
-				</form>
+				</form:form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
