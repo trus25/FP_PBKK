@@ -49,25 +49,24 @@ public class HomeController {
 		return "formAddBarang";
 	}
 	
-	@GetMapping(value="/debug1")
+/*	@GetMapping(value="/debug1")
 	public String product(Model theModel) {
 		List<Products> theProducts = productService.getProducts();
 		
 		theModel.addAttribute("products", theProducts);
 		return "listBarang";
-	}
+	}*/
 	
-	@GetMapping(value="/listBarang")
+	@GetMapping(value="/tampilBarang")
 	public String product1(Model theModel) {
 		List<Products> theProducts = productService.getProducts();
 		
 		theModel.addAttribute("products", theProducts);
-		return "listBarang";
+		return "tampilBarang";
 	}
 	
 	@PostMapping("/login")
 	public String login(@ModelAttribute("pengguna") Pengguna thePengguna, HttpSession webSession,Model theModel) {
-		
 		String result = penggunaService.checkPengguna(thePengguna);
 		if (result.equals("accepted")) {
 			webSession.setAttribute("username",thePengguna.getPenggunaUsername());
@@ -96,31 +95,14 @@ public class HomeController {
 		
 		return "redirect:/product-edit";
 	}
-	//@RequestMapping(value="/shop")
-	//public String shop(Model theModel) {
-	//	List<Seller> theSellers = sellerService.getSellers();
-	//	theModel.addAttribute("sellers", theSellers);
+	
+	@GetMapping(value="/detailBarang")
+	public String productdetail(@RequestParam("productId") int theId, Model theModel) {
 		
-	//	return "shop";
-	//}
-	
-	//@RequestMapping(value="/shop-detail")
-	//public String shopdetail() {
-	//	return "shop-detail";
-	//}
-	
-//	@GetMapping(value="/product-detail")
-//	public String productdetail(@RequestParam("productId") int theId, Model theModel) {
-//		
-//		Products theProduct = productService.getProduct(theId);
-//		
-//		theModel.addAttribute("product", theProduct);
-//		
-//		return "product-detail";
-//	}
-	
-//	@RequestMapping(value="/contact")
-//	public String contact() {
-//		return "contact";
-//	}
+		Products theProduct = productService.getProduct(theId);
+		
+		theModel.addAttribute("product", theProduct);
+		
+		return "detailBarang";
+	}
 }

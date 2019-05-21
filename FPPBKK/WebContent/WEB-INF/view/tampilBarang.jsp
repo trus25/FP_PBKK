@@ -48,7 +48,10 @@
         <div class="row">
           <c:forEach var="tempBarang" items="${products}">
           <div class="col-md-6">
-          <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
+          <c:url var="productDetailsLink" value="/detailBarang">
+		  		<c:param name="productId" value="${tempBarang.id}" />
+		  </c:url>
+          <div class="card"> <a href="${productDetailsLink}"><img class="card-img-top" src="images/buku.jpg" alt="Card image cap"></a>
             <div class="card-body">
               <h5 class="card-title">${tempBarang.barangName} </h5>
               <p class="card-text">Rp ${tempBarang.barangPrice}</p>

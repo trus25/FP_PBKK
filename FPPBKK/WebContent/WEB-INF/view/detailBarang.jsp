@@ -39,10 +39,10 @@
           <div class="col-md-6 offset-xl-4 col-xl-4">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${tempBarang.barangName} </h5>
-              <p class="card-text">${tempBarang.barangKategori}</p>			  
-			  <p class="card-text">${tempBarang.barangPemilik}</p>
-			  <p class="card-text">Rp ${tempBarang.barangPrice}/hari</p>
+              <h5 class="card-title">${product.barangName} </h5>
+              <p class="card-text">${product.barangCategory}</p>			  
+			  <p class="card-text">${product.barangUserid}</p>
+			  <p class="card-text">Rp ${product.barangPrice}/hari</p>
             </div>
 			  <a href="formPeminjaman" class="btn btn-primary">Pinjam</a>
           </div>
