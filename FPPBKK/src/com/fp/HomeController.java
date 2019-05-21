@@ -46,7 +46,7 @@ public class HomeController {
 		Products theProducts = new Products();
 		
 		theModel.addAttribute("product", theProducts);
-		return "form";
+		return "formAddBarang";
 	}
 	
 	@GetMapping(value="/debug1")
@@ -71,10 +71,8 @@ public class HomeController {
 		String result = penggunaService.checkPengguna(thePengguna);
 		if (result.equals("accepted")) {
 			webSession.setAttribute("username",thePengguna.getPenggunaUsername());
-			List<Products> theProducts = productService.getProducts();
 			
-			theModel.addAttribute("products", theProducts);
-			return "listBarang";
+			return "redirect:/tampilBarang";
 		}
 		else {
 			return "index";
@@ -92,11 +90,11 @@ public class HomeController {
 	public String saveProduct(@ModelAttribute("products") Products theProduct,Model theModel) {
 		
 		productService.saveProduct(theProduct);
-List<Products> theProducts = productService.getProducts();
+        List<Products> theProducts = productService.getProducts();
 		
 		theModel.addAttribute("products", theProducts);
 		
-		return "listBarang";
+		return "redirect:/product-edit";
 	}
 	//@RequestMapping(value="/shop")
 	//public String shop(Model theModel) {
