@@ -20,5 +20,9 @@ public class PeminjamanServiceImpl implements PeminjamanService {
 	public List<Peminjaman> getPeminjamans(){
 		return peminjamanDAO.getPeminjamans();
 	}
+	
+	public void savePeminjaman(String barangnama, String usernama, String waktupinjam, String waktukembali) {
+		peminjamanDAO.savePeminjaman(barangnama, usernama, waktupinjam, waktukembali);
+	}
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <head>
@@ -36,15 +37,18 @@
         <div class="col-md-6 col-xl-7">&nbsp;</div>
         
   
+  		  <c:url var="PinjamLink" value="/formpeminjaman">
+		  		<c:param name="idBarang" value="${product.id}" />
+		  </c:url>
           <div class="col-md-6 offset-xl-4 col-xl-4">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${product.barangName} </h5>
-              <p class="card-text">${product.barangCategory}</p>			  
+              <h5 class="card-title">${theProduct.barangName} </h5>
+              <p class="card-text">${theProduct.barangCategory}</p>			  
 			  <p class="card-text">${product.barangUserid}</p>
 			  <p class="card-text">Rp ${product.barangPrice}/hari</p>
             </div>
-			  <a href="formPeminjaman" class="btn btn-primary">Pinjam</a>
+			  <a href="${PinjamLink}" class="btn btn-primary">Pinjam</a>
           </div>
        </div>
       </div>

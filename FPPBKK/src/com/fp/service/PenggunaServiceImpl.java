@@ -21,5 +21,11 @@ public class PenggunaServiceImpl implements PenggunaService {
 		String result = penggunaDAO.checkPengguna(thePengguna);
 		return result;
 	}
-
+	
+	@Override
+	@Transactional
+	public int dapatPengguna(Pengguna thePengguna) {
+		int result = penggunaDAO.dapatPengguna(thePengguna);
+		return result;
+	}
 }

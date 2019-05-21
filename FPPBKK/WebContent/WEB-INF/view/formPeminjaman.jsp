@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <head>
@@ -35,26 +37,31 @@
 		  <div class="col-md-6 offset-xl-1 col-xl-3"> <h3> </h3></div>
         <div class="col-md-6 col-xl-7">&nbsp;</div>
         
-  
+  		 <c:url var="pinjamLink" value="/pinjamBarang">
+		  		<c:param name="namaBarang" value="${product.barangName}" />
+		  </c:url>
           <div class="col-md-6 offset-xl-4 col-xl-4">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${tempBarang.barangName} </h5>
-			  <p class="card-text">Rp ${tempBarang.barangPrice}/hari</p>
+              <form:form action="${pinjamLink}" modelAttribute="products" method="POST">
+              <h5 class="card-title">${product.barangName}</h5>
+			  <p class="card-text">Rp ${product.barangPrice}/hari</p>
 			  <div class="form-group">
                     <form:label path="barangCategory" class="control-label col-sm-2">
                       Tanggal Pinjam</form:label>
                        <div class="col-sm-10 col-xl-4">
-                    <form:input path="barangCategory" class="form-control"/></div>
+                    <form:input path="tglPinjam" class="form-control"/></div>
                 </div>
 			  <div class="form-group">
                     <form:label path="barangCategory" class="control-label col-sm-2">
                       Tanggal Kembali</form:label>
                        <div class="col-sm-10 col-xl-4">
-                    <form:input path="barangCategory" class="form-control"/></div>
+                    <form:input path="tglBalik" class="form-control"/></div>
+                    <input type="submit" value="pinjam" class="btn btn-primary"/>
                 </div>
+                </form:form>
             </div>
-			<a href="#" class="btn btn-primary">Pinjam</a>
+			
           </div>
        </div>
       </div>

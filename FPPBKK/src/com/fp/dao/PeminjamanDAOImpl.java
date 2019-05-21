@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.fp.entity.Peminjaman;
+import com.fp.entity.Pengguna;
+import com.fp.entity.Products;
 
 @Repository
 public class PeminjamanDAOImpl implements PeminjamanDAO {
@@ -26,6 +28,22 @@ public class PeminjamanDAOImpl implements PeminjamanDAO {
 		List<Peminjaman> peminjaman = theQuery.getResultList();
 		
 		return peminjaman;
+	}
+	
+	@Override
+	public void savePeminjaman(String barangnama, String usernama, String waktupinjam, String waktukembali) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query query = currentSession.createSQLQuery(
+				"CALL updateharga(:namabarang,:namauser,:waktupinjam,:waktukembali)")
+				.addEntity(Peminjaman.class)
+				.setParameter("namabarang", barangnama)
+				.setParameter("namauser", usernama)
+				.setParameter("waktupinjam", waktupinjam)
+				.setParameter("waktukembali", waktukembali);
+		
+		
 	}
 
 }

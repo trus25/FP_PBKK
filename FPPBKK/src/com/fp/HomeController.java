@@ -3,6 +3,7 @@ package com.fp;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class HomeController {
     @Autowired
     private ProductService productService;
 	
-	//@Autowired
-	//private SellerService sellerService;
+	@Autowired
+	private PeminjamanService peminjamanService;
 	
 	@Autowired
 	private PenggunaService penggunaService;
@@ -45,7 +46,7 @@ public class HomeController {
 	public String inputBarang(Model theModel) {
 		Products theProducts = new Products();
 		
-		theModel.addAttribute("product", theProducts);
+		theModel.addAttribute("products", theProducts);
 		return "formAddBarang";
 	}
 	
@@ -74,7 +75,7 @@ public class HomeController {
 			return "redirect:/tampilBarang";
 		}
 		else {
-			return "index";
+			return "redirect:/";
 		}
 	}
 	@GetMapping("/formbarang")
@@ -88,12 +89,8 @@ public class HomeController {
 	@PostMapping("/savebarang")
 	public String saveProduct(@ModelAttribute("products") Products theProduct,Model theModel) {
 		
-		productService.saveProduct(theProduct);
-        List<Products> theProducts = productService.getProducts();
-		
-		theModel.addAttribute("products", theProducts);
-		
-		return "redirect:/product-edit";
+		productService.saveProduct(theProduct);		
+		return "redirect:/tampilBarang";
 	}
 	
 	@GetMapping(value="/detailBarang")
@@ -105,4 +102,33 @@ public class HomeController {
 		
 		return "detailBarang";
 	}
+	
+	@GetMapping("/formpeminjaman")
+	public String formbarang(@RequestParam("idBarang") int theId, Model theModel, HttpSession https) {
+		Products theProduct = productService.getProduct(theId);
+		
+		theModel.addAttribute("product", theProduct);
+		
+		return "formPeminjaman";
+	}
+	
+	@GetMapping(value="/pinjamBarang")
+	public String pinjambarang(@RequestParam("namaBarang") String theNama,
+							   @RequestParam("tglPinjam") String thePinjam,
+							   @RequestParam("tglBalik") String theBalik,
+												Model theModel, HttpServletRequest req) {
+		String sesi = req.getAttribute("username").toString();
+		
+		peminjamanService.savePeminjaman(theNama, sesi, thePinjam, theBalik);
+		
+		
+		
+		return "detailBarang";
+	}
+	
+	
+	
+	
+	
+	
 }

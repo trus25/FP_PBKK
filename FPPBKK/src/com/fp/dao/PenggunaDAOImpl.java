@@ -28,5 +28,13 @@ public class PenggunaDAOImpl implements PenggunaDAO {
 		}
 		else return "refused";
 	}
-
+	@Override
+	public int dapatPengguna(Pengguna thePengguna) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		String user = thePengguna.getPenggunaUsername();
+		Query<Pengguna> theQuery = currentSession.createQuery("from Pengguna where pengguna_nama=:username",Pengguna.class);
+		theQuery.setParameter("username", user);
+		Pengguna tempPengguna = theQuery.getSingleResult();
+		return tempPengguna.getPenggunaId();
+	}
 }
