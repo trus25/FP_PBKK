@@ -41,11 +41,11 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/inputBarang")
+	@GetMapping(value="/inputBarang")
 	public String inputBarang(Model theModel) {
 		Products theProducts = new Products();
 		
-		theModel.addAttribute("product", theProducts);
+		theModel.addAttribute("products", theProducts);
 		return "formAddBarang";
 	}
 	
@@ -93,7 +93,7 @@ public class HomeController {
 		
 		theModel.addAttribute("products", theProducts);
 		
-		return "redirect:/product-edit";
+		return "redirect:/tampilBarang";
 	}
 	
 	@GetMapping(value="/detailBarang")
