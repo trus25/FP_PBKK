@@ -19,8 +19,8 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent1">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"> <a class="nav-link" href="listBarang">Home <span class="sr-only">(current)</span></a> </li>
-            <li class="nav-item"> <a class="nav-link" href="formbarang">Input Barang</a></li>
+            <li class="nav-item active"> <a class="nav-link" href="tampilBarang">Home <span class="sr-only">(current)</span></a> </li>
+            <li class="nav-item"> <a class="nav-link" href="inputBarang">Input Barang</a></li>
             <li class="nav-item dropdown">
   <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
     <div class="dropdown-divider"></div>

@@ -42,7 +42,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/inputBarang")
+	@GetMapping(value="/inputBarang")
 	public String inputBarang(Model theModel) {
 		Products theProducts = new Products();
 		
@@ -88,8 +88,12 @@ public class HomeController {
 	}
 	@PostMapping("/savebarang")
 	public String saveProduct(@ModelAttribute("products") Products theProduct,Model theModel) {
-		
 		productService.saveProduct(theProduct);		
+        List<Products> theProducts = productService.getProducts();
+		
+		theModel.addAttribute("products", theProducts);
+		
+
 		return "redirect:/tampilBarang";
 	}
 	
