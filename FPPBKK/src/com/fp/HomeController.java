@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fp.entity.Pengguna;
 import com.fp.entity.Products;
 import com.fp.service.ProductService;
+
+import javassist.compiler.ast.NewExpr;
+
 import com.fp.entity.Peminjaman;
 import com.fp.service.PenggunaService;
 import com.fp.service.PeminjamanService;
@@ -113,6 +116,8 @@ public class HomeController {
 		
 		theModel.addAttribute("product", theProduct);
 		
+		Peminjaman thePeminjaman = new Peminjaman();
+		theModel.addAttribute("peminjaman",thePeminjaman);
 		return "formPeminjaman";
 	}
 	

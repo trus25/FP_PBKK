@@ -43,8 +43,8 @@
           <div class="col-md-6 offset-xl-4 col-xl-4">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${theProduct.barangName} </h5>
-              <p class="card-text">${theProduct.barangCategory}</p>			  
+              <h5 class="card-title">${product.barangName} </h5>
+              <p class="card-text">${product.barangCategory}</p>			  
 			  <p class="card-text">${product.barangUserid}</p>
 			  <p class="card-text">Rp ${product.barangPrice}/hari</p>
             </div>

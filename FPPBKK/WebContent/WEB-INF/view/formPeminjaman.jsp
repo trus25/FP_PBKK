@@ -43,20 +43,20 @@
           <div class="col-md-6 offset-xl-4 col-xl-4">
           <div class="card"> <img class="card-img-top" src="images/buku.jpg" alt="Card image cap">
             <div class="card-body">
-              <form:form action="${pinjamLink}" modelAttribute="products" method="POST">
               <h5 class="card-title">${product.barangName}</h5>
 			  <p class="card-text">Rp ${product.barangPrice}/hari</p>
+              <form:form action="${pinjamLink}" modelAttribute="peminjaman" method="POST">
 			  <div class="form-group">
-                    <form:label path="barangCategory" class="control-label col-sm-2">
-                      Tanggal Pinjam</form:label>
+                    <label class="control-label col-sm-2">
+                      Tanggal Pinjam</label>
                        <div class="col-sm-10 col-xl-4">
-                    <form:input path="tglPinjam" class="form-control"/></div>
+                    <form:input path="pinjamWaktupinjam" class="form-control"/></div>
                 </div>
 			  <div class="form-group">
-                    <form:label path="barangCategory" class="control-label col-sm-2">
-                      Tanggal Kembali</form:label>
+                    <label class="control-label col-sm-2">
+                      Tanggal Kembali</label>
                        <div class="col-sm-10 col-xl-4">
-                    <form:input path="tglBalik" class="form-control"/></div>
+                    <form:input path="pinjamWaktukembali" class="form-control"/></div>
                     <input type="submit" value="pinjam" class="btn btn-primary"/>
                 </div>
                 </form:form>
