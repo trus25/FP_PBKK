@@ -91,12 +91,7 @@ public class HomeController {
 	}
 	@PostMapping("/savebarang")
 	public String saveProduct(@ModelAttribute("products") Products theProduct,Model theModel) {
-		productService.saveProduct(theProduct);		
-        List<Products> theProducts = productService.getProducts();
-		
-		theModel.addAttribute("products", theProducts);
-		
-
+		productService.saveProduct(theProduct);	
 		return "redirect:/tampilBarang";
 	}
 	
@@ -121,13 +116,13 @@ public class HomeController {
 		return "formPeminjaman";
 	}
 	
-	@GetMapping(value="/pinjamBarang")
+	@PostMapping(value="/pinjamBarang")
 	public String pinjambarang(@RequestParam("namaBarang") String theNama,
-							   @RequestParam("tglPinjam") String thePinjam,
-							   @RequestParam("tglBalik") String theBalik,
-												Model theModel, HttpServletRequest req) {
+							   @RequestParam("pinjamWaktupinjam") String thePinjam,
+							   @RequestParam("pinjamWaktukembali") String theBalik,
+							   Model theModel, HttpServletRequest req) {
 		String sesi = req.getAttribute("username").toString();
-		
+		System.out.println(theNama +"," + thePinjam + "," + theBalik +","+ sesi);
 		peminjamanService.savePeminjaman(theNama, sesi, thePinjam, theBalik);
 		
 		
